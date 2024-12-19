@@ -11,5 +11,8 @@ namespace MovieShopTrio.Services.Interfaces
 
         public void DeleteMovie(int id);
 
-	}
+        public Movie GetDetails(int id);
+
+        public bool EditMovie(int id,Movie movie);
+    }
 }

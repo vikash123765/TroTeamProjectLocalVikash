@@ -48,6 +48,36 @@ namespace MovieShopTrio.Services
             return movies;
         }
 
+        public Movie  GetDetails(int id)
+        {
+            var movie = _MoviedbContext.Movies.FirstOrDefault(c => c.Id == id);
+
+            return movie;
+        }
+
+        public bool EditMovie(int id, Movie updatedMovie)
+        {
+            var existingMovie = _MoviedbContext.Movies.FirstOrDefault(c => c.Id == id);
+
+            if (existingMovie == null)
+            {
+                return false; // Movie not found
+            }
+
+            // Update the movie with the new values
+            existingMovie.Title = updatedMovie.Title;
+            existingMovie.Director = updatedMovie.Director;
+            existingMovie.Description = updatedMovie.Description;
+            existingMovie.ReleaseYear = updatedMovie.ReleaseYear;
+            existingMovie.Price = updatedMovie.Price;
+
+            // Save changes to the database
+            _MoviedbContext.SaveChanges();
+
+            return true; // Movie updated successfully
+        }
+
+
 
     }
 }

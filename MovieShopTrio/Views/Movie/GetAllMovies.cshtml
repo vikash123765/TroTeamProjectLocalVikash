@@ -51,9 +51,9 @@
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    <a class="btn btn-sm btn-success" asp-action="AddToCart" asp-route-id="@item.Id">Buy</a>
+                       <a class="btn btn-sm btn-success" asp-controller="Order"  asp-action="AddToCart" asp-route-id="@item.Id">Buy</a>
 
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="EditMovie" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
 
                     <form asp-controller="Movie" asp-action="DeleteMovie" asp-route-id="@item.Id" method="post" style="display:inline;">

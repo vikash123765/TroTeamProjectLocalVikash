@@ -1,0 +1,41 @@
+﻿@using Newtonsoft.Json
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    // Retrieve the cart data from the session as a string
+    var cartString = HttpContextAccessor.HttpContext.Session.GetString("Cart");
+    List<MovieShopTrio.Models.CartItemViewModel> cartItems = new List<MovieShopTrio.Models.CartItemViewModel>();
+
+    // If the cart exists in the session, deserialize it into a List of CartItemViewModel
+    if (!string.IsNullOrEmpty(cartString))
+    {
+        cartItems = JsonConvert.DeserializeObject<List<MovieShopTrio.Models.CartItemViewModel>>(cartString);
+    }
+}
+
+<h2>Your Cart</h2>
+
+@if (cartItems.Count == 0)
+{
+    <p>Your cart is empty.</p>
+}
+else
+{
+    <ul>
+        @foreach (var cartItem in cartItems)
+        {
+            <li>
+                <strong>@cartItem.Movie.Title</strong> - @cartItem.Movie.Price.ToString("C")
+                @if (cartItem.Quantity > 1)
+                {
+                    <strong> x @cartItem.Quantity</strong>
+                }
+                <a href="@Url.Action("RemoveFromCart", "Order", new { movieId = cartItem.Movie.Id })">Remove</a>
+            </li>
+        }
+    </ul>
+
+    <h3>Total: @cartItems.Sum(item => item.Movie.Price * item.Quantity).ToString("C")</h3>
+}
+
+<a href="@Url.Action("GetAllMovies", "Movie")">Continue Shopping</a>

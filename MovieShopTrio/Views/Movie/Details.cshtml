@@ -1,0 +1,21 @@
+﻿@model MovieShopTrio.Database.Movie
+
+@{
+    ViewData["Title"] = "Movie Details";
+}
+
+<h1>@Model.Title</h1>
+
+<div>
+    <h3>Details for @Model.Title</h3>
+    <hr />
+    <p><strong>Director:</strong> @Model.Director</p>
+    <p><strong>Release Year:</strong> @Model.ReleaseYear</p>
+    <p><strong>Description:</strong></p>
+    <p>@Model.Description</p>
+    <p><strong>Price:</strong> @Model.Price.ToString("C")</p>
+</div>
+
+<div>
+    <a asp-action="GetAllMovies" class="btn btn-secondary">Back to List</a>
+</div>

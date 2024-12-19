@@ -451,3 +451,4 @@ C:\Users\vikas\Desktop\local movie shop trio\MovieShopTrio\MovieShopTrio\bin\Deb
 C:\Users\vikas\Desktop\local movie shop trio\MovieShopTrio\MovieShopTrio\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\vikas\Desktop\local movie shop trio\MovieShopTrio\MovieShopTrio\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\vikas\Desktop\local movie shop trio\MovieShopTrio\MovieShopTrio\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\vikas\Desktop\local movie shop trio\MovieShopTrio\MovieShopTrio\obj\Debug\net8.0\MovieShopTrio.sourcelink.json

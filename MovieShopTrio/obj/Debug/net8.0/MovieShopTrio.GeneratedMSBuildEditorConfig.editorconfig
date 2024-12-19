@@ -38,12 +38,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Movie/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Movie/EditMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcRWRpdE1vdmllLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Movie/GetAllMovies.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcR2V0QWxsTW92aWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Movie/MovieSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcTW92aWVTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Order/ViewCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcVmlld0NhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Shared/Error.cshtml]
