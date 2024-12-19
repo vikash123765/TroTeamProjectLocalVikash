@@ -1,10 +1,12 @@
 ﻿using MovieShopTrio.Database;
+using MovieShopTrio.Views.Movie;
 
 namespace MovieShopTrio.Models
 {
     public class CartItemViewModel
     {
-        public Movie Movie { get; set; }  // Movie object
+
+        public MovieViewModel Movie { get; set; }  
         public int Quantity { get; set; }  // Quantity of the movie in the cart
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 namespace MovieShopTrio.Database
 {
     public class Movie
@@ -18,6 +19,7 @@ namespace MovieShopTrio.Database
         
         public string Description { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<OrderRow> OrderRows { get; set; } = new List<OrderRow>();
     }
 }

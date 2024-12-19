@@ -1,15 +1,16 @@
-﻿@using Newtonsoft.Json
+﻿@using MovieShopTrio.Models
+@using Newtonsoft.Json
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 
 @{
     // Retrieve the cart data from the session as a string
     var cartString = HttpContextAccessor.HttpContext.Session.GetString("Cart");
-    List<MovieShopTrio.Models.CartItemViewModel> cartItems = new List<MovieShopTrio.Models.CartItemViewModel>();
+    List<CartItemViewModel> cartItems = new List<CartItemViewModel>();
 
     // If the cart exists in the session, deserialize it into a List of CartItemViewModel
     if (!string.IsNullOrEmpty(cartString))
     {
-        cartItems = JsonConvert.DeserializeObject<List<MovieShopTrio.Models.CartItemViewModel>>(cartString);
+        cartItems = JsonConvert.DeserializeObject<List<CartItemViewModel>>(cartString);
     }
 }
 

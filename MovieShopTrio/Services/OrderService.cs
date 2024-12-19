@@ -3,17 +3,18 @@ using MovieShopTrio.Controllers;
 using MovieShopTrio.Database;
 using MovieShopTrio.Models;
 using MovieShopTrio.Services.Interfaces;
+using MovieShopTrio.Views.Movie;
 using Newtonsoft.Json;
 
 namespace MovieShopTrio.Services
 {
-    public class OrderService: IOrderService
+    public class OrderService : IOrderService
     {
- 
+
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly MovieDbContext _dbContext;
 
-    
+
         public OrderService(MovieDbContext moviedbContext, IHttpContextAccessor iHttpContextAccessor)
         {
 
@@ -40,48 +41,64 @@ namespace MovieShopTrio.Services
 
         public void AddToCart(int movieId)
         {
+            Console.WriteLine($"AddToCart called with movieId: {movieId}");
+
             var movie = _dbContext.Movies.FirstOrDefault(m => m.Id == movieId);
             if (movie == null)
             {
-                return; // Movie not found, do nothing
+                Console.WriteLine($"Movie with ID {movieId} not found.");
+                return;
             }
 
+            Console.WriteLine($"Movie found: {movie.Title}");
+
             var cart = GetCart();
+            Console.WriteLine($"Current cart count: {cart.Count}");
+
             var existingCartItem = cart.FirstOrDefault(c => c.Movie.Id == movieId);
 
             if (existingCartItem != null)
             {
                 existingCartItem.Quantity++;
+                Console.WriteLine($"Updated quantity for movie: {movie.Title}");
             }
             else
             {
-                cart.Add(new CartItemViewModel { Movie = movie, Quantity = 1 });
+                cart.Add(new CartItemViewModel
+                {
+                    Movie = new MovieViewModel
+                    {
+                        Id = movie.Id,
+                        Title = movie.Title,
+                        Price = movie.Price
+                    },
+                    Quantity = 1
+                });
+                Console.WriteLine($"Added new movie to cart: {movie.Title}");
             }
 
-            // Save the updated cart back to the session
             var serializedCart = JsonConvert.SerializeObject(cart);
             _httpContextAccessor.HttpContext.Session.SetString("Cart", serializedCart);
-
-            // Log the session to check if it's being saved correctly
-            Console.WriteLine("Cart Saved: " + serializedCart);  // Log the cart data
+            Console.WriteLine("Cart updated successfully.");
         }
 
         // Remove a movie from the cart
         public void RemoveFromCart(int movieId)
         {
-            var cart = GetCart(); // Get the current cart from the session
+            Console.WriteLine($"RemoveFromCart called with movieId: {movieId}");
 
-            // Find the cart item with the given movieId
+            var cart = GetCart();
             var cartItemToRemove = cart.FirstOrDefault(c => c.Movie.Id == movieId);
 
             if (cartItemToRemove != null)
             {
-                // Remove the movie from the cart
                 cart.Remove(cartItemToRemove);
+                Console.WriteLine($"Movie removed: {cartItemToRemove.Movie.Title}");
             }
 
-            // Save the updated cart back to the session
             _httpContextAccessor.HttpContext.Session.SetString("Cart", JsonConvert.SerializeObject(cart));
+            Console.WriteLine("Cart updated after removal.");
         }
+
     }
 }
