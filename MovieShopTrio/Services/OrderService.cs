@@ -132,12 +132,21 @@ namespace MovieShopTrio.Services
             {
                 OrderDate = DateTime.Now,
                 CustomerId = customerId,
-                OrderRows = cartItems.Select(item => new OrderRow
-                {
-                    MovieId = item.Movie.Id,
-                    Price = item.Movie.Price,
-                }).ToList()
+                OrderRows = new List<OrderRow>()
             };
+
+            foreach (var cartItem in cartItems)
+            {
+                for (int i = 0; i < cartItem.Quantity; i++)
+                {
+                    // Add each copy of the movie as a separate order row
+                    order.OrderRows.Add(new OrderRow
+                    {
+                        MovieId = cartItem.Movie.Id,
+                        Price = cartItem.Movie.Price,
+                    });
+                }
+            }
 
             _dbContext.Orders.Add(order);
             _dbContext.SaveChanges();

@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|c:\\users\\vikas\\desktop\\local movie shop trio\\movieshoptrio\\movieshoptrio\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|solutionrelative:movieshoptrio\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|c:\\users\\vikas\\desktop\\local movie shop trio\\movieshoptrio\\movieshoptrio\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|solutionrelative:movieshoptrio\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|c:\\users\\vikas\\desktop\\local movie shop trio\\movieshoptrio\\movieshoptrio\\views\\order\\orderplaced.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|solutionrelative:movieshoptrio\\views\\order\\orderplaced.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|c:\\users\\vikas\\desktop\\local movie shop trio\\movieshoptrio\\movieshoptrio\\views\\order\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|solutionrelative:movieshoptrio\\views\\order\\registration.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|c:\\users\\vikas\\desktop\\local movie shop trio\\movieshoptrio\\movieshoptrio\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|solutionrelative:movieshoptrio\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|c:\\users\\vikas\\desktop\\local movie shop trio\\movieshoptrio\\movieshoptrio\\views\\order\\orderplaced.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|solutionrelative:movieshoptrio\\views\\order\\orderplaced.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{328C5624-2AC3-4715-A5F7-5D588AC0D950}|MovieShopTrio\\MovieShopTrio.csproj|c:\\users\\vikas\\desktop\\local movie shop trio\\movieshoptrio\\movieshoptrio\\views\\order\\viewcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -142,38 +142,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "MovieShopTrio\\Controllers\\OrderController.cs",
-              "ToolTip": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Controllers\\OrderController.cs*",
-              "RelativeToolTip": "MovieShopTrio\\Controllers\\OrderController.cs*",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAwwGsAAAANAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "MovieShopTrio\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAwwF8AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-19T06:58:03.581Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "OrderService.cs",
               "DocumentMoniker": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "MovieShopTrio\\Services\\OrderService.cs",
-              "ToolTip": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Services\\OrderService.cs",
-              "RelativeToolTip": "MovieShopTrio\\Services\\OrderService.cs",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAuwJkAAAAlAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Services\\OrderService.cs*",
+              "RelativeToolTip": "MovieShopTrio\\Services\\OrderService.cs*",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAjwJQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-19T08:08:32.663Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "Registration.cshtml",
+              "DocumentMoniker": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Views\\Order\\Registration.cshtml",
+              "RelativeDocumentMoniker": "MovieShopTrio\\Views\\Order\\Registration.cshtml",
+              "ToolTip": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Views\\Order\\Registration.cshtml",
+              "RelativeToolTip": "MovieShopTrio\\Views\\Order\\Registration.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T11:11:13.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "OrderPlaced.cshtml",
               "DocumentMoniker": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Views\\Order\\OrderPlaced.cshtml",
               "RelativeDocumentMoniker": "MovieShopTrio\\Views\\Order\\OrderPlaced.cshtml",
@@ -181,21 +193,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Order\\OrderPlaced.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-20T10:59:14.968Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Registration.cshtml",
-              "DocumentMoniker": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Views\\Order\\Registration.cshtml",
-              "RelativeDocumentMoniker": "MovieShopTrio\\Views\\Order\\Registration.cshtml",
-              "ToolTip": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\Views\\Order\\Registration.cshtml",
-              "RelativeToolTip": "MovieShopTrio\\Views\\Order\\Registration.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-20T11:11:13.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T10:59:14.968Z"
             },
             {
               "$type": "Document",
@@ -207,8 +205,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Order\\ViewCart.cshtml",
               "ViewState": "AgIAACYAAAAAAAAAAAAAwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-19T08:32:03.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T08:32:03.126Z"
             },
             {
               "$type": "Document",
@@ -220,8 +217,7 @@
               "RelativeToolTip": "MovieShopTrio\\Services\\Interfaces\\IOrderService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T07:44:41.683Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T07:44:41.683Z"
             },
             {
               "$type": "Document",
@@ -233,8 +229,7 @@
               "RelativeToolTip": "MovieShopTrio\\Services\\MovieService.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAxwFEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T11:43:27.442Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T11:43:27.442Z"
             },
             {
               "$type": "Document",
@@ -246,8 +241,7 @@
               "RelativeToolTip": "MovieShopTrio\\Database\\MovieDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T10:02:37.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T10:02:37.364Z"
             },
             {
               "$type": "Document",
@@ -259,8 +253,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Movie\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-18T11:59:11.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T11:59:11.971Z"
             },
             {
               "$type": "Document",
@@ -272,8 +265,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-18T14:45:20.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T14:45:20.984Z"
             },
             {
               "$type": "Document",
@@ -285,8 +277,7 @@
               "RelativeToolTip": "MovieShopTrio\\Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T14:47:14.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T14:47:14.561Z"
             },
             {
               "$type": "Document",
@@ -298,8 +289,7 @@
               "RelativeToolTip": "MovieShopTrio\\Database\\Movie.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T14:35:08.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T14:35:08.946Z"
             },
             {
               "$type": "Document",
@@ -311,8 +301,7 @@
               "RelativeToolTip": "MovieShopTrio\\Database\\Order.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T10:01:04.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T10:01:04.662Z"
             },
             {
               "$type": "Document",
@@ -324,8 +313,7 @@
               "RelativeToolTip": "MovieShopTrio\\Database\\Customer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T10:02:14.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T10:02:14.941Z"
             },
             {
               "$type": "Document",
@@ -337,8 +325,7 @@
               "RelativeToolTip": "MovieShopTrio\\Database\\OrderRow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-20T10:02:25.321Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-20T10:02:25.321Z"
             },
             {
               "$type": "Document",
@@ -350,8 +337,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Movie\\GetAllMovies.cshtml",
               "ViewState": "AgIAACEAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-18T14:28:39.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T14:28:39.135Z"
             },
             {
               "$type": "Document",
@@ -363,8 +349,7 @@
               "RelativeToolTip": "MovieShopTrio\\Models\\CartItemViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T08:20:16.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T08:20:16.692Z"
             },
             {
               "$type": "Document",
@@ -398,8 +383,7 @@
               "RelativeToolTip": "MovieShopTrio\\Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T07:46:34.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T07:46:34.996Z"
             },
             {
               "$type": "Document",
@@ -411,8 +395,7 @@
               "RelativeToolTip": "MovieShopTrio\\Services\\Interfaces\\ICustomerService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T12:28:42.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T12:28:42.037Z"
             },
             {
               "$type": "Document",
@@ -424,8 +407,7 @@
               "RelativeToolTip": "MovieShopTrio\\Controllers\\MovieController.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAYwCwAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T11:40:24.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T11:40:24.555Z"
             },
             {
               "$type": "Document",
@@ -437,8 +419,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-19T09:27:48.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T09:27:48.336Z"
             },
             {
               "$type": "Document",
@@ -450,8 +431,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Shared\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-19T09:09:37.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T09:09:37.412Z"
             },
             {
               "$type": "Document",
@@ -463,8 +443,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Shared\\_Layout.cshtml.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-19T09:09:40.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T09:09:40.109Z"
             },
             {
               "$type": "Document",
@@ -476,8 +455,7 @@
               "RelativeToolTip": "MovieShopTrio\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T07:28:21.988Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T07:28:21.988Z"
             },
             {
               "$type": "Document",
@@ -489,8 +467,7 @@
               "RelativeToolTip": "MovieShopTrio\\Models\\OrderViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T07:45:44.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T07:45:44.576Z"
             },
             {
               "$type": "Document",
@@ -502,8 +479,7 @@
               "RelativeToolTip": "MovieShopTrio\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-19T07:32:50.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-19T07:32:50.428Z"
             },
             {
               "$type": "Document",
@@ -515,8 +491,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Movie\\EditMovie.cshtml",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-18T14:15:09.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T14:15:09.631Z"
             },
             {
               "$type": "Document",
@@ -528,8 +503,7 @@
               "RelativeToolTip": "MovieShopTrio\\Controllers\\CustomerController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T12:43:27.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T12:43:27.117Z"
             },
             {
               "$type": "Document",
@@ -541,8 +515,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Movie\\MovieSuccess.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-18T12:05:58.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T12:05:58.002Z"
             },
             {
               "$type": "Document",
@@ -554,8 +527,7 @@
               "RelativeToolTip": "MovieShopTrio\\Views\\Movie\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-18T14:38:03.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T14:38:03.54Z"
             },
             {
               "$type": "Document",
@@ -567,8 +539,7 @@
               "RelativeToolTip": "MovieShopTrio\\Services\\Interfaces\\IMovieService.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T11:42:45.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T11:42:45.222Z"
             }
           ]
         }
