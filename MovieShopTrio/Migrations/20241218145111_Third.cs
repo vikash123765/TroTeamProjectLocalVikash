@@ -5,7 +5,7 @@
 namespace MovieShopTrio.Migrations
 {
     /// <inheritdoc />
-    public partial class Second : Migration
+    public partial class Third : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

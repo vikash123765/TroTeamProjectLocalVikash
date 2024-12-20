@@ -26,6 +26,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\vikas\Desktop\local movie shop trio\MovieShopTrio\MovieShopTrio
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Customer/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Customer/CustomerAdded.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3VzdG9tZXJBZGRlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Customer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Customer/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -52,6 +68,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Movie/MovieSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcTW92aWVTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Order/OrderPlaced.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJQbGFjZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Order/Registration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcUmVnaXN0cmF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Order/ViewCart.cshtml]

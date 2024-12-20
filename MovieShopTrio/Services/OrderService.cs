@@ -3,8 +3,8 @@ using MovieShopTrio.Controllers;
 using MovieShopTrio.Database;
 using MovieShopTrio.Models;
 using MovieShopTrio.Services.Interfaces;
-using MovieShopTrio.Views.Movie;
 using Newtonsoft.Json;
+
 
 namespace MovieShopTrio.Services
 {
@@ -100,5 +100,61 @@ namespace MovieShopTrio.Services
             Console.WriteLine("Cart updated after removal.");
         }
 
+        public bool Checkout(string email)
+        {
+            // Check if the customer exists
+            var customer = _dbContext.Customers.FirstOrDefault(c => c.EmailAddress == email);
+
+            if (customer != null)
+            {
+                // Customer exists, place the order immediately
+                PlaceOrder(customer.Id);
+                return true; // Indicates existing customer and successful order placement
+            }
+
+            return false; // Indicates customer doesn't exist
+        }
+
+        public bool PlaceOrder(int customerId)
+        {
+            // Retrieve cart items from session
+            var cartString = _httpContextAccessor.HttpContext.Session.GetString("Cart");
+
+            if (string.IsNullOrEmpty(cartString))
+            {
+                throw new InvalidOperationException("Cart is empty.");
+            }
+
+            var cartItems = JsonConvert.DeserializeObject<List<CartItemViewModel>>(cartString);
+
+            // Create the order and populate OrderRows
+            var order = new Order
+            {
+                OrderDate = DateTime.Now,
+                CustomerId = customerId,
+                OrderRows = cartItems.Select(item => new OrderRow
+                {
+                    MovieId = item.Movie.Id,
+                    Price = item.Movie.Price,
+                }).ToList()
+            };
+
+            _dbContext.Orders.Add(order);
+            _dbContext.SaveChanges();
+
+            // Clear the cart session
+            _httpContextAccessor.HttpContext.Session.Remove("Cart");
+
+            return true; // Indicates successful order placement
+        }
+        public int RegisterCustomer(Customer customer)
+        {
+            // Save the customer in the database
+            _dbContext.Customers.Add(customer);
+            _dbContext.SaveChanges();
+
+            return customer.Id; // Return the new customer ID
+        }
     }
+
 }

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MovieShopTrio.Controllers;
 using MovieShopTrio.Database;
 using MovieShopTrio.Services.Interfaces;
@@ -20,24 +19,23 @@ namespace MovieShopTrio.Services
             _IHttpContextAccessor = iHttpContextAccessor;
         }
 
-
         public void Create(Movie movie)
         {
             _MoviedbContext.Movies.Add(movie);
             _MoviedbContext.SaveChanges();
         }
 
-		public void DeleteMovie(int id)
+        public void DeleteMovie(int id)
         {
             var movie = _MoviedbContext.Movies.FirstOrDefault(c => c.Id == id);
 
             _MoviedbContext.Movies.Remove(movie);
-			_MoviedbContext.SaveChanges();
+            _MoviedbContext.SaveChanges();
 
-		}
+        }
 
 
-		public List<Movie> GetAllMovies()
+        public List<Movie> GetAllMovies()
         {
             var movies = _MoviedbContext.Movies.ToList();
 
@@ -48,7 +46,7 @@ namespace MovieShopTrio.Services
             return movies;
         }
 
-        public Movie  GetDetails(int id)
+        public Movie GetDetails(int id)
         {
             var movie = _MoviedbContext.Movies.FirstOrDefault(c => c.Id == id);
 

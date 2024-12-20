@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MovieShopTrio.Database;
+﻿using MovieShopTrio.Database;
 
 namespace MovieShopTrio.Services.Interfaces
 {
@@ -13,6 +12,6 @@ namespace MovieShopTrio.Services.Interfaces
 
         public Movie GetDetails(int id);
 
-        public bool EditMovie(int id,Movie movie);
+        public bool EditMovie(int id, Movie movie);
     }
 }

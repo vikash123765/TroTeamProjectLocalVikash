@@ -12,8 +12,8 @@ using MovieShopTrio.Database;
 namespace MovieShopTrio.Migrations
 {
     [DbContext(typeof(MovieDbContext))]
-    [Migration("20241218101019_Second")]
-    partial class Second
+    [Migration("20241218145111_Third")]
+    partial class Third
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

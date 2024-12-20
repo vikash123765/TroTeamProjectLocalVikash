@@ -1,4 +1,4 @@
-﻿namespace MovieShopTrio.Views.Movie
+﻿namespace MovieShopTrio.Models
 {
     public class MovieViewModel
     {

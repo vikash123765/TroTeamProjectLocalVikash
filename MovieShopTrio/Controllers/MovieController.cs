@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MovieShopTrio.Database;
-using MovieShopTrio.Services;
 using MovieShopTrio.Services.Interfaces;
 
 namespace MovieShopTrio.Controllers
@@ -62,12 +61,12 @@ namespace MovieShopTrio.Controllers
         }
 
         [HttpGet]
-        public IActionResult EditMovie(int id )
+        public IActionResult EditMovie(int id)
         {
 
 
             // Get the movie by ID from the database
-            var movie = _movieService.GetDetails(id); 
+            var movie = _movieService.GetDetails(id);
 
             // If the movie doesn't exist, return a NotFound result
             if (movie == null)
@@ -77,16 +76,16 @@ namespace MovieShopTrio.Controllers
 
             // Pass the movie object to the view
             return View(movie);
-            
+
         }
         [HttpPost]
-        public IActionResult EditMovie(int id,Movie movie)
+        public IActionResult EditMovie(int id, Movie movie)
         {
             // Ensure that the model is valid
             if (ModelState.IsValid)
             {
                 // Call the service to update the movie
-                bool updateSuccessful = _movieService.EditMovie(id,movie);
+                bool updateSuccessful = _movieService.EditMovie(id, movie);
 
                 if (!updateSuccessful)
                 {

@@ -40,3 +40,18 @@ else
 }
 
 <a href="@Url.Action("GetAllMovies", "Movie")">Continue Shopping</a>
+
+
+<!-- Checkout Section -->
+<h3>Checkout</h3>
+<form id="checkoutForm" method="post" action="@Url.Action("Checkout", "Order")">
+    <!-- Email input with placeholder -->
+    <div class="form-group">
+        <label for="email">Enter your email address to checkout</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email Address" required />
+    </div>
+
+    <!-- Checkout Button -->
+    <button type="submit" class="btn btn-primary" id="checkoutButton">Checkout</button>
+</form>
+
