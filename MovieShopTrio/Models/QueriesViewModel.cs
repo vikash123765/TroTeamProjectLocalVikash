@@ -1,7 +1,10 @@
-﻿using MovieShopTrio.Database;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieShopTrio.Database;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieShopTrio.Models
 {
+
     public class QueriesViewModel
     {
         public List<Movie> MostPopular { get; set; } = new List<Movie>();
@@ -11,6 +14,6 @@ namespace MovieShopTrio.Models
 
         public List<Movie> Cheapest5 { get; set; } = new List<Movie>();
 
-        public List<Movie> TopCustomer { get; set; } = new List<Movie>();
+        public MostExpenisveOrderModel MostExpensiveOrder { get; set; } = new MostExpenisveOrderModel();
     }
 }

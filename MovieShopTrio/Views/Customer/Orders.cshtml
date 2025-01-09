@@ -1,0 +1,14 @@
+﻿@model CustomerOrdersViewModel
+
+<h2>Orders for @Model.CustomerEmail</h2>
+<p>Total Orders: @Model.OrderCount</p>
+
+<div class="orders-container">
+    @foreach (var order in Model.Orders)
+    {
+        <partial name="_OrderPartial" model="order" />
+
+    }
+</div>
+
+<p>Total Cost: @Model.Orders.Sum(order => Model.GetTotalCost(order)).ToString("C")</p>

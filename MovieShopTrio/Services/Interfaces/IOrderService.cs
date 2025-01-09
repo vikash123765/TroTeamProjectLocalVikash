@@ -9,9 +9,12 @@ namespace MovieShopTrio.Services.Interfaces
         List<CartItemViewModel> GetCart();
 
         void AddToCart(int movieId); // Add a movie to the cart
-        void RemoveFromCart(int movieId); // Remove a movie from the cart
+        public void RemoveOneFromCart(int movieId);
+        public IEnumerable<dynamic> GetFilteredOrders(string customerName, DateTime? startDate, DateTime? endDate);
 
         bool Checkout(string email);
+
+        public void IncreaseQuantity(int movieId);
 
         bool PlaceOrder(int customerId);
 

@@ -1,70 +1,81 @@
-﻿@model IEnumerable<MovieShopTrio.Database.Movie>
-
+﻿@model IEnumerable<MovieShopTrio.Database.Movie> 
 
 @{
-    ViewData["Title"] = "GetAllMovies";
+    ViewData["Title"] = "Get All Movies";
 }
 
 
 
-<p>
-    <a asp-controller="Movie" asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Director)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReleaseYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="container mt-4 d-flex flex-column justify-content-center align-items-center" style="min-height: 80vh;">
+    <!-- Full height center alignment -->
+    <h1 class="mb-4">All Movies</h1>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+        <form asp-controller="Movie" asp-action="Search" method="get">
+            <input type="text" name="query" placeholder="Search for a movie..." required />
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- Movies Table -->
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark text-center">
+            <!-- Center-align header -->
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Director)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReleaseYear)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    <!-- Add to Cart Button -->
-                    <form action="@Url.Action("AddToCart", "Order")" method="post">
-                        <input type="hidden" name="movieId" value="@item.Id" />
-                        <button type="submit" class="btn btn-primary">Add to Cart</button>
-                    </form>
-
-                    <a asp-action="EditMovie" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-
-                    <form asp-controller="Movie" asp-action="DeleteMovie" asp-route-id="@item.Id" method="post" style="display:inline;">
-                        <button type="submit" class="btn btn-link text-danger p-0" onclick="return confirm('Are you sure you want to delete this movie?')">Delete</button>
-                    </form>
-                </td>
+                <th>@Html.DisplayNameFor(model => model.Title)</th>
+                <th>@Html.DisplayNameFor(model => model.Director)</th>
+                <th>@Html.DisplayNameFor(model => model.Description)</th>
+                <th>@Html.DisplayNameFor(model => model.ReleaseYear)</th>
+                <th>@Html.DisplayNameFor(model => model.Price)</th>
+                <th>Image</th> <!-- New Column for URLImage -->
+                <th>Actions</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="text-center align-middle">
+                    <!-- Center-align content -->
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Director)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ReleaseYear)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+
+                    <!-- New Image Column -->
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.URLImage))
+                        {
+                            <img src="@item.URLImage" alt="@item.Title" class="img-fluid rounded" style="width: 100px;" />
+                        }
+                        else
+                        {
+                            <span>No Image Available</span>
+                        }
+                    </td>
+
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Movie actions">
+                            <!-- Add to Cart Button -->
+                            <form action="@Url.Action("AddToCart", "Order")" method="post" class="d-inline-block">
+                                <input type="hidden" name="movieId" value="@item.Id" />
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="bi bi-cart-plus"></i> Add to Cart
+                                </button>
+                            </form>
+
+                            <!-- Details Link -->
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">
+                                <i class="bi bi-info-circle"></i> Details
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+}

@@ -14,7 +14,7 @@ namespace MovieShopTrio.Services
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly MovieDbContext _dbContext;
 
-
+ 
         public OrderService(MovieDbContext moviedbContext, IHttpContextAccessor iHttpContextAccessor)
         {
 
@@ -83,23 +83,70 @@ namespace MovieShopTrio.Services
         }
 
         // Remove a movie from the cart
-        public void RemoveFromCart(int movieId)
+        public void RemoveOneFromCart(int movieId)
         {
-            Console.WriteLine($"RemoveFromCart called with movieId: {movieId}");
+            Console.WriteLine($"RemoveOneFromCart called with movieId: {movieId}");
 
             var cart = GetCart();
-            var cartItemToRemove = cart.FirstOrDefault(c => c.Movie.Id == movieId);
+            var cartItemToUpdate = cart.FirstOrDefault(c => c.Movie.Id == movieId);
 
-            if (cartItemToRemove != null)
+            if (cartItemToUpdate != null)
             {
-                cart.Remove(cartItemToRemove);
-                Console.WriteLine($"Movie removed: {cartItemToRemove.Movie.Title}");
+                if (cartItemToUpdate.Quantity > 1)
+                {
+                    // Decrement the quantity
+                    cartItemToUpdate.Quantity--;
+                    Console.WriteLine($"Quantity decreased for movie: {cartItemToUpdate.Movie.Title}. New quantity: {cartItemToUpdate.Quantity}");
+                }
+                else
+                {
+                    // Remove the item if quantity is 1
+                    cart.Remove(cartItemToUpdate);
+                    Console.WriteLine($"Movie removed: {cartItemToUpdate.Movie.Title}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No matching movie found in the cart.");
             }
 
+            // Save the updated cart back to the session
             _httpContextAccessor.HttpContext.Session.SetString("Cart", JsonConvert.SerializeObject(cart));
             Console.WriteLine("Cart updated after removal.");
         }
 
+
+
+        public IEnumerable<dynamic> GetFilteredOrders(string customerName, DateTime? startDate, DateTime? endDate)
+            {
+                var orders = _dbContext.Orders.AsQueryable();
+
+                if (!string.IsNullOrEmpty(customerName))
+                {
+                    orders = orders.Where(o => o.Customer.Name.Contains(customerName));
+                }
+
+                if (startDate.HasValue)
+                {
+                    orders = orders.Where(o => o.OrderDate >= startDate.Value);
+                }
+
+                if (endDate.HasValue)
+                {
+                    orders = orders.Where(o => o.OrderDate <= endDate.Value);
+                }
+
+                return orders
+                    .OrderByDescending(o => o.OrderDate)
+                    .Select(o => new
+                    {
+                        o.Id,
+                        o.OrderDate,
+                        CustomerName = o.Customer.Name,
+                        TotalItems = o.OrderRows.Count
+                    })
+                    .ToList();
+            }
         public bool Checkout(string email)
         {
             // Check if the customer exists
@@ -164,6 +211,34 @@ namespace MovieShopTrio.Services
 
             return customer.Id; // Return the new customer ID
         }
+
+        public void IncreaseQuantity(int movieId)
+        {
+            // Retrieve the cart data from the session
+            var cartString = _httpContextAccessor.HttpContext.Session.GetString("Cart");
+
+            if (string.IsNullOrEmpty(cartString))
+            {
+                // Optionally handle empty cart case, e.g., log or throw an exception
+                return;
+            }
+
+            // Deserialize the cart
+            var cartItems = JsonConvert.DeserializeObject<List<CartItemViewModel>>(cartString);
+
+            // Find the item to increase quantity
+            var cartItem = cartItems.FirstOrDefault(item => item.Movie.Id == movieId);
+            if (cartItem != null)
+            {
+                cartItem.Quantity++; // Increment the quantity
+            }
+
+            // Save the updated cart back to the session
+            _httpContextAccessor.HttpContext.Session.SetString("Cart", JsonConvert.SerializeObject(cartItems));
+        }
+
+
+
     }
 
 }

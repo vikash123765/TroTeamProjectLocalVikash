@@ -14,44 +14,79 @@
     }
 }
 
-<h2>Your Cart</h2>
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Your Cart</h2>
+    <hr />
 
-@if (cartItems.Count == 0)
-{
-    <p>Your cart is empty.</p>
-}
-else
-{
-    <ul>
-        @foreach (var cartItem in cartItems)
-        {
-            <li>
-                <strong>@cartItem.Movie.Title</strong> - @cartItem.Movie.Price.ToString("C")
-                @if (cartItem.Quantity > 1)
-                {
-                    <strong> x @cartItem.Quantity</strong>
-                }
-                <a href="@Url.Action("RemoveFromCart", "Order", new { movieId = cartItem.Movie.Id })">Remove</a>
-            </li>
-        }
-    </ul>
+    @if (cartItems.Count == 0)
+    {
+        <p class="text-center text-muted">Your cart is empty.</p>
+        <div class="text-center mt-3">
+            <a href="@Url.Action("GetAllMoviesPaginated", "Movie")" class="btn btn-primary btn-lg">Continue Shopping</a>
+        </div>
+    }
+    else
+    {
+        <!-- Table Section -->
+        <div class="table-responsive">
+            <table class="table table-bordered text-center">
+                <thead class="table-dark">
+                    <!-- Adjusted for dark mode -->
+                    <tr>
+                        <th>Movie</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cartItem in cartItems)
+                    {
+                        <tr>
+                            <td>@cartItem.Movie.Title</td>
+                            <td>@cartItem.Movie.Price.ToString("C")</td>
+                            <td>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <span class="me-2">@cartItem.Quantity</span>
+                                    <form asp-action="IncreaseQuantity" asp-controller="Order" method="post" class="d-inline-block">
+                                        <input type="hidden" name="movieId" value="@cartItem.Movie.Id" />
+                                        <button type="submit" class="btn btn-success btn-sm">
+                                            <i class="bi bi-plus-circle"></i> <!-- Use Bootstrap Icons -->
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("RemoveFromCart", "Order", new { movieId = cartItem.Movie.Id })" class="btn btn-danger btn-sm">
+                                    Remove
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
 
-    <h3>Total: @cartItems.Sum(item => item.Movie.Price * item.Quantity).ToString("C")</h3>
-}
+        <!-- Total and Checkout Section -->
+        <div class="mt-4">
+            <h3 class="text-end">Total: <strong>@cartItems.Sum(item => item.Movie.Price * item.Quantity).ToString("C")</strong></h3>
 
-<a href="@Url.Action("GetAllMovies", "Movie")">Continue Shopping</a>
+            <form id="checkoutForm" method="post" action="@Url.Action("Checkout", "Order")"
+                  class="shadow-sm p-3 bg-body text-body rounded mt-3 mx-auto" style="max-width: 600px;">
+                <div class="form-group mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required />
+                </div>
 
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-block">Checkout</button>
+                </div>
+            </form>
+        </div>
 
-<!-- Checkout Section -->
-<h3>Checkout</h3>
-<form id="checkoutForm" method="post" action="@Url.Action("Checkout", "Order")">
-    <!-- Email input with placeholder -->
-    <div class="form-group">
-        <label for="email">Enter your email address to checkout</label>
-        <input type="email" id="email" name="email" class="form-control" placeholder="Email Address" required />
-    </div>
-
-    <!-- Checkout Button -->
-    <button type="submit" class="btn btn-primary" id="checkoutButton">Checkout</button>
-</form>
-
+        <!-- Continue Shopping Button -->
+        <div class="text-start mt-3">
+            <a href="@Url.Action("GetAllMoviesPaginated", "Movie")" class="btn btn-secondary">Continue Shopping</a>
+        </div>
+    }
+</div>

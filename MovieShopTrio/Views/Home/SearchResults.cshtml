@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MovieShopTrio.Models.MovieViewModel>
+
+<h2>Search Results</h2>
+
+@if (!Model.Any())
+{
+    <p>No results found for "@ViewData["Query"]".</p>
+}
+else
+{
+    <ul>
+        @foreach (var movie in Model)
+        {
+            <li>
+                <img src="@movie.URLImage" alt="@movie.Title" style="width: 100px; height: auto;" />
+                <strong>@movie.Title</strong> - $@movie.Price
+            </li>
+        }
+    </ul>
+}
+}

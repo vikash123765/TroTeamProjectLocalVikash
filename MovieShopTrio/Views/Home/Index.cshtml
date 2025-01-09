@@ -1,8 +1,186 @@
-﻿@{
+@model MovieShopTrio.Models.QueriesViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    .carousel-item img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    .carousel-item {
+        height: 400px;
+        width: 100%;
+        justify-content: center;
+    }
+    /* Smooth transition for the card */
+    .card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        border: 1px solid #ddd; /* Default border */
+        overflow: hidden; /* Ensures the enlarged image stays within the card */
+    }
+
+        /* Hover effect for the card (container and image) */
+        .card:hover {
+            transform: scale(1.05); /* Slightly enlarge the entire card */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+            border: 1px solid #007bff; /* Highlight border color on hover */
+        }
+
+    /* Ensure the image remains responsive inside the card */
+    .card-img-top {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Prevent additional scaling of the image if the card is already scaling */
+    .card:hover .card-img-top {
+        transform: none;
+    }
+</style>
+
+
+
+<h1 class="text-center sen-header">Welcome to our Movie Shop</h1>
+
+<h2 class="text-center mt-5"><em><strong>Top 5 Most Popular Movies</strong></em></h2>
+<hr />
+<div id="carouselExampleAutoplaying" class="carousel slide m-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @foreach (var movie in Model.MostPopular)
+        {
+            if (movie == Model.MostPopular.First())
+            {
+                <div class="carousel-item active">
+                    <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id">
+                        <img src="@movie.URLImage" class="img-fluid" alt="@movie.Title" />
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="carousel-item">
+                    <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id">
+                        <img src="@movie.URLImage" class="img-fluid" alt="@movie.Title" />
+                    </a>
+                </div>
+            }
+        }
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
+
+
+<h2 class="text-center"><em><strong>Top 5 Newest Movies</strong></em></h2>
+<hr />
+<div class="container p-4">
+    <div class="row justify-content-center">
+        @foreach (var movie in Model.Newest5)
+        {
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
+                <div class="card">
+                    <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id">
+                        <img src="@movie.URLImage" class="card-img-top" alt="@movie.Title">
+                    </a>
+                  
+                    <div class="card-body">
+                        <p class="card-text">@movie.Title <em>(@movie.ReleaseYear)</em></p>
+                    </div>    <!-- Add to Cart Button -->
+                    <form action="@Url.Action("AddToCart", "Order")" method="post" class="d-inline-block">
+                        <input type="hidden" name="movieId" value="@movie.Id" />
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        }
+    </div>
+</div>
+
+<h2 class="text-center"><em><strong>Top 5 Oldest Movies</strong></em></h2>
+<hr />
+<div class="container p-4">
+    <div class="row justify-content-center">
+        @foreach (var movie in Model.Oldest5)
+        {
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
+                <div class="card">
+                    <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id">
+                        <img src="@movie.URLImage" class="card-img-top" alt="@movie.Title">
+                    </a>
+
+                    <div class="card-body">
+                        <p class="card-text">@movie.Title <em>(@movie.ReleaseYear)</em></p>
+                    </div>                <!-- Add to Cart Button -->
+                    <form action="@Url.Action("AddToCart", "Order")" method="post" class="d-inline-block">
+                        <input type="hidden" name="movieId" value="@movie.Id" />
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                    </form>
+                </div>
+
+
+            </div>
+        }
+    </div>
+</div>
+
+<h2 class="text-center"><em><strong>Top 5 Cheapest Movies</strong></em></h2>
+<hr />
+<div class="container p-4">
+    <div class="row justify-content-center">
+        @foreach (var movie in Model.Cheapest5)
+        {
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4">
+                <div class="card">
+                    <a asp-controller="Movie" asp-action="Details" asp-route-id="@movie.Id">
+                        <img src="@movie.URLImage" class="card-img-top" alt="@movie.Title">
+                    </a>
+
+                    <div class="card-body">
+                        <p class="card-text">@movie.Title <em>@movie.Price.ToString("C")</em></p>
+                    </div>
+                    <!-- Add to Cart Button -->
+                    <form action="@Url.Action("AddToCart", "Order")" method="post" class="d-inline-block">
+                        <input type="hidden" name="movieId" value="@movie.Id" />
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        }
+    </div>
+</div>
+
+<h2 class="text-center"><em><strong>Customer with the Most Expensive Order</strong></em></h2>
+<hr />
+@if (Model.MostExpensiveOrder != null)
+{
+    <h3 class="text-center"><em>@Model.MostExpensiveOrder.CustomerName</em></h3>
+    <p class="text-center">Order Total: @Model.MostExpensiveOrder.TotalOrderValue.ToString("C")</p>
+    @* <p class="text-center">Order Date: @Model.MostExpensiveOrder.OrderDate.ToShortDateString()</p> *@
+}
+else
+{
+    <p class="text-center">No orders found.</p>
+}

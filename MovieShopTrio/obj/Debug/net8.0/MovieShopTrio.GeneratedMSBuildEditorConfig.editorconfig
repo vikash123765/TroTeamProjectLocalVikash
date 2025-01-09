@@ -17,87 +17,147 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MovieShopTrio
 build_property.RootNamespace = MovieShopTrio
-build_property.ProjectDir = C:\Users\vikas\Desktop\local movie shop trio\MovieShopTrio\MovieShopTrio\
+build_property.ProjectDir = C:\Users\vikas\source\repos\MovieShopTrio\MovieShopTrio\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\vikas\Desktop\local movie shop trio\MovieShopTrio\MovieShopTrio
+build_property.MSBuildProjectDirectory = C:\Users\vikas\source\repos\MovieShopTrio\MovieShopTrio
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Customer/Create.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Admin/CreateMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlTW92aWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Admin/EditCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdEN1c3RvbWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Admin/EditMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdE1vdmllLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Admin/GetAllCustomers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0QWxsQ3VzdG9tZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Admin/GetAllMovies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2V0QWxsTW92aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Admin/MovieSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTW92aWVTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Admin/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Admin/OrdersByEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3JkZXJzQnlFbWFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Customer/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Customer/CustomerAdded.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Customer/CustomerAdded.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3VzdG9tZXJBZGRlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Customer/Index.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Customer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Customer/Update.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Customer/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Customer/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Home/Index.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Home/Privacy.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Movie/Create.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Home/SearchResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2hSZXN1bHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Movie/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Movie/Details.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Movie/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Movie/EditMovie.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Movie/EditMovie.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcRWRpdE1vdmllLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Movie/GetAllMovies.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Movie/GetAllMovies.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcR2V0QWxsTW92aWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Movie/MovieSuccess.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Movie/GetAllMoviesPaginated.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcR2V0QWxsTW92aWVzUGFnaW5hdGVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Movie/MovieSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcTW92aWVTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Order/OrderPlaced.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Movie/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Order/OrderPlaced.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJQbGFjZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Order/Registration.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Order/Registration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcUmVnaXN0cmF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Order/ViewCart.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Order/ViewCart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcVmlld0NhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Shared/Error.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Shared/_CustomerPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DdXN0b21lclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Shared/_OrderPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9PcmRlclBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/_ViewImports.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/_ViewStart.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vikas/Desktop/local movie shop trio/MovieShopTrio/MovieShopTrio/Views/Shared/_Layout.cshtml]
+[C:/Users/vikas/source/repos/MovieShopTrio/MovieShopTrio/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zbkfc09bu5

@@ -1,7 +1,9 @@
 ﻿using MovieShopTrio.Controllers;
 using MovieShopTrio.Database;
 using MovieShopTrio.Services.Interfaces;
+using MovieShopTrio.Models;
 using System.Net;
+using Microsoft.EntityFrameworkCore;
 
 namespace MovieShopTrio.Services
 {
@@ -29,9 +31,17 @@ namespace MovieShopTrio.Services
             customerList = _MoviedbContext.Customers.OrderBy(c => c.Id).ToList();
             return customerList;
         }
+
+        public Customer GetDetails(int id)
+        {
+            var customer = _MoviedbContext.Customers.FirstOrDefault(c => c.Id == id);
+
+            return customer;
+        }
+
         public bool UpdateCustomer(int id, Customer updatedCustomer)
         {
-            if(updatedCustomer == null) throw new ArgumentNullException(nameof(updatedCustomer));
+            if (updatedCustomer == null) throw new ArgumentNullException(nameof(updatedCustomer));
 
             var customer = _MoviedbContext.Customers.FirstOrDefault(c => c.Id == id);
             if (customer != null)
@@ -52,7 +62,7 @@ namespace MovieShopTrio.Services
             }
             else
             {
-                return false; 
+                return false;
             }
         }
 
@@ -64,6 +74,26 @@ namespace MovieShopTrio.Services
                 _MoviedbContext.Customers.Remove(customer);
             }
             _MoviedbContext.SaveChanges();
+        }
+
+        public CustomerOrdersViewModel GetOrdersByCustomerEmail(string email)
+        {
+            var customerOrders = _MoviedbContext.Customers
+                .Include(c => c.Orders)
+                .ThenInclude(o => o.OrderRows)
+                .ThenInclude(or => or.Movie)
+                .FirstOrDefault(c => c.EmailAddress == email);
+
+            if (customerOrders == null)
+                return null;
+
+            return new CustomerOrdersViewModel
+            {
+                CustomerId = customerOrders.Id,
+                CustomerEmail = customerOrders.EmailAddress,
+                CustomerName = customerOrders.Name,
+                Orders = customerOrders.Orders.ToList()
+            };
         }
     }
 }

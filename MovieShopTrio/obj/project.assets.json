@@ -7767,11 +7767,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\MovieShopTrio.csproj",
+      "projectUniqueName": "C:\\Users\\vikas\\source\\repos\\MovieShopTrio\\MovieShopTrio\\MovieShopTrio.csproj",
       "projectName": "MovieShopTrio",
-      "projectPath": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\MovieShopTrio.csproj",
+      "projectPath": "C:\\Users\\vikas\\source\\repos\\MovieShopTrio\\MovieShopTrio\\MovieShopTrio.csproj",
       "packagesPath": "C:\\Users\\vikas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\obj\\",
+      "outputPath": "C:\\Users\\vikas\\source\\repos\\MovieShopTrio\\MovieShopTrio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vikas\\AppData\\Roaming\\NuGet\\NuGet.Config",

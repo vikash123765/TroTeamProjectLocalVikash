@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OS16uF6giLc=",
+  "dgSpecHash": "alnDnPe0Tio=",
   "success": true,
-  "projectFilePath": "C:\\Users\\vikas\\Desktop\\local movie shop trio\\MovieShopTrio\\MovieShopTrio\\MovieShopTrio.csproj",
+  "projectFilePath": "C:\\Users\\vikas\\source\\repos\\MovieShopTrio\\MovieShopTrio\\MovieShopTrio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vikas\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\vikas\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

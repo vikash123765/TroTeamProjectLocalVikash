@@ -1,0 +1,15 @@
+﻿@model IEnumerable<MovieShopTrio.Database.Customer>
+
+@{
+    ViewData["Title"] = "GetAllCustomers";
+}
+
+<h1 class="text-center"><em><strong>Customers</strong></em></h1>
+<hr />
+
+<div class="row mt-3">
+    @foreach (var item in Model)
+    {
+        <partial name="_CustomerPartial" model=item></partial>
+    }
+</div>

@@ -3,8 +3,11 @@
     ViewData["Title"] = "MovieSuccess";
 }
 
-<h1>Movie has been added succcessfully !!</h1>
+<div class="container text-center mt-5">
+    <h1 class="text-success">Movie has been added successfully!</h1>
+    <p class="mt-3">Thank you for adding the movie. You can now view it in the movie list.</p>
 
-<div>
-    <a asp-action="GetAllMovies">Back to Movie List</a>
+    <div class="mt-4">
+        <a asp-action="GetAllMovies" class="btn btn-primary btn-lg">Back to Movie List</a>
+    </div>
 </div>

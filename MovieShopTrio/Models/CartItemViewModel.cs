@@ -2,7 +2,9 @@
 {
     public class CartItemViewModel
     {
+        public int Id { get; set; } 
+        public int Quantity { get; set; }
         public MovieViewModel Movie { get; set; }
-        public int Quantity { get; set; }  // Quantity of the movie in the cart
     }
+
 }

@@ -36,6 +36,12 @@
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
+            <!-- New URLImage field -->
+            <div class="form-group mb-3">
+                <label asp-for="URLImage" class="form-label"></label>
+                <input asp-for="URLImage" class="form-control" placeholder="Enter image URL" />
+                <span asp-validation-for="URLImage" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

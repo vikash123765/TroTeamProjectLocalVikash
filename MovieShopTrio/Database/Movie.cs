@@ -17,6 +17,12 @@ namespace MovieShopTrio.Database
 
         public string Description { get; set; }
 
+        [MaxLength(500)]
+        public string? URLImage { get; set; }
+
+        [MaxLength(500)]
+        public string? BackdropImage { get; set; }
+
         public virtual ICollection<OrderRow> OrderRows { get; set; } = new List<OrderRow>();
     }
 }

@@ -17,6 +17,7 @@ namespace MovieShopTrio.Controllers
             _db = db;
             _customerService = customerService;
         }
+
         public IActionResult Index()
         {
             return View(_customerService.GetAllCustomers());
@@ -26,6 +27,7 @@ namespace MovieShopTrio.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Create(Customer customer)
         {
@@ -36,14 +38,17 @@ namespace MovieShopTrio.Controllers
             }
             return View();
         }
+
         public IActionResult CustomerAdded()
         {
             return View();
         }
+
         public IActionResult Update(int id)
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Update(int id, Customer customer)
         {
@@ -52,7 +57,6 @@ namespace MovieShopTrio.Controllers
             return RedirectToAction("Index");
         }
 
-
         public IActionResult Delete(int id)
         {
             _customerService.DeleteCustomer(id);
@@ -60,5 +64,20 @@ namespace MovieShopTrio.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet("Customer/Orders/{email}")]
+        public IActionResult Orders(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return BadRequest("Email is required");
+
+            var customerOrders = _customerService.GetOrdersByCustomerEmail(email);
+
+            if (customerOrders == null)
+                return NotFound($"No orders found for customer with email: {email}");
+
+
+            return View(customerOrders);
+
+        }
     }
 }

@@ -1,13 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Drawing.Printing;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using MovieShopTrio.Controllers;
 using MovieShopTrio.Database;
+using MovieShopTrio.Models;
 using MovieShopTrio.Services.Interfaces;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MovieShopTrio.Services
 {
-    public class MovieService: IMovieService
+    public class MovieService : IMovieService
     {
-       
+
         private readonly IHttpContextAccessor _IHttpContextAccessor;
         private readonly MovieDbContext _MoviedbContext;
 
@@ -59,21 +63,76 @@ namespace MovieShopTrio.Services
 
             if (existingMovie == null)
             {
-                return false; // Movie not found
+                return false;
             }
 
-            // Update the movie with the new values
+
             existingMovie.Title = updatedMovie.Title;
             existingMovie.Director = updatedMovie.Director;
             existingMovie.Description = updatedMovie.Description;
             existingMovie.ReleaseYear = updatedMovie.ReleaseYear;
             existingMovie.Price = updatedMovie.Price;
+            existingMovie.URLImage = updatedMovie.URLImage;
 
-            // Save changes to the database
+
+
             _MoviedbContext.SaveChanges();
 
-            return true; // Movie updated successfully
+            return true;
         }
+
+     
+
+
+
+        public MoviePaginationViewModel GetMovies(string query, int? choice, int page, int pageSize)
+        {
+            // Start with all movies
+            IQueryable<Movie> moviesQuery = _MoviedbContext.Movies.AsQueryable();
+
+            // Apply filtering by query (if present)
+            if (!string.IsNullOrEmpty(query))
+            {
+                moviesQuery = moviesQuery.Where(m => m.Title.Contains(query));
+            }
+
+            // Apply sorting based on choice (if present)
+            if (choice.HasValue)
+            {
+                switch (choice.Value)
+                {
+                    case 1: // Price (High to Low)
+                        moviesQuery = moviesQuery.OrderByDescending(m => m.Price);
+                        break;
+                    case 2: // Price (Low to High)
+                        moviesQuery = moviesQuery.OrderBy(m => m.Price);
+                        break;
+                    case 3: // Title (A to Z)
+                        moviesQuery = moviesQuery.OrderBy(m => m.Title);
+                        break;
+                }
+            }
+            else
+            {
+                // Default sorting
+                moviesQuery = moviesQuery.OrderBy(m => m.Title);
+            }
+
+            // Pagination
+            int totalMovies = moviesQuery.Count();
+            var movies = moviesQuery.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+            return new MoviePaginationViewModel
+            {
+                Movies = movies,
+                CurrentPage = page,
+                TotalPages = (int)Math.Ceiling(totalMovies / (double)pageSize),
+                Query = query,
+                Choice = choice
+            };
+        }
+
+
 
 
 

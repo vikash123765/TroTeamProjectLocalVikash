@@ -1,0 +1,46 @@
+﻿@model MovieShopTrio.Database.Order
+
+<style>
+    .custom-dark-shadow{
+        box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.75) !important; /* Bigger and darker shadow */
+    }
+</style>
+
+<div class="col-md-6">
+    <div class="order-card mb-4 p-3 custom-dark-shadow border rounded">
+        <h4>Order #@Model.Id</h4>
+        <p>Order Date: @Model.OrderDate.ToShortDateString()</p>
+
+        @if (Model.OrderRows.Any())
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Movie</th>
+                        <th class="text-end pe-4">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var orderRow in Model.OrderRows)
+                    {
+                        <tr>
+                            <td>@orderRow.Movie.Title</td>
+                            <td class="text-end">@orderRow.Price.ToString("C")</td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot class="offset-md-11">
+                    <tr>
+                        <th>Total</th>
+                        <td class="text-end">@Model.OrderRows.Sum(or => or.Price).ToString("C")</td>
+                    </tr>
+                </tfoot>
+            </table>
+        }
+        else
+        {
+            <p>No item in this order.</p>
+        }
+
+    </div>
+</div>

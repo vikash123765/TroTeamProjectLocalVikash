@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using MovieShopTrio.Database;
 using MovieShopTrio.Models;
@@ -9,14 +9,16 @@ namespace MovieShopTrio.Controllers
 {
     public class HomeController : Controller
     {
+        private  readonly IMovieService _movieService;
         private readonly ILogger<HomeController> _logger;
         private readonly MovieDbContext _db;
         private readonly IHomeService _homeService;
 
-        
-       
-        public HomeController(ILogger<HomeController> logger, MovieDbContext db, IHomeService homeService)
+
+     
+        public HomeController(ILogger<HomeController> logger, MovieDbContext db, IHomeService homeService, IMovieService movieService)
         {
+            _movieService = movieService;
             _logger = logger;
             _db = db;
             _homeService = homeService;
@@ -25,11 +27,11 @@ namespace MovieShopTrio.Controllers
         public IActionResult Index()
         {
             QueriesViewModel obj = new QueriesViewModel();
-           /* obj.MostPopular = _homeService.MostPopular()*/;
+            obj.MostPopular = _homeService.MostPopular();
             obj.Newest5 = _homeService.Newest5();
             obj.Oldest5 = _homeService.oldest5();
             obj.Cheapest5 = _homeService.Cheapest5();
-           /* obj.TopCustomer = _homeService.TopCustomer()*/;
+            obj.MostExpensiveOrder = _homeService.MostExpensiveOrder();
             return View(obj);
         }
 
@@ -43,5 +45,6 @@ namespace MovieShopTrio.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+ 
     }
 }

@@ -4,18 +4,48 @@
     ViewData["Title"] = "Movie Details";
 }
 
-<h1>@Model.Title</h1>
-
-<div>
-    <h3>Details for @Model.Title</h3>
+<div class="container mt-5">
+    <h1 class="text-center text-primary">@Model.Title</h1>
     <hr />
-    <p><strong>Director:</strong> @Model.Director</p>
-    <p><strong>Release Year:</strong> @Model.ReleaseYear</p>
-    <p><strong>Description:</strong></p>
-    <p>@Model.Description</p>
-    <p><strong>Price:</strong> @Model.Price.ToString("C")</p>
-</div>
 
-<div>
-    <a asp-action="GetAllMovies" class="btn btn-secondary">Back to List</a>
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow">
+                @* Display the image using the URLImage property *@
+                @if (!string.IsNullOrEmpty(Model.URLImage))
+                {
+                    <img src="@Model.URLImage" alt="@Model.Title" class="card-img-top img-fluid" />
+                }
+
+                <div class="card-body">
+                    <h3 class="card-title text-center text-secondary">Details for @Model.Title</h3>
+                    <p class="card-text mt-3">
+                        <strong>Director:</strong> @Model.Director
+                    </p>
+                    <p class="card-text">
+                        <strong>Release Year:</strong> @Model.ReleaseYear
+                    </p>
+                    <p class="card-text">
+                        <strong>Description:</strong>
+                        <br />
+                        @Model.Description
+                    </p>
+                    <p class="card-text">
+                        <strong>Price:</strong> @Model.Price.ToString("C")
+                    </p>
+                    <!-- Add to Cart Button -->
+                    <form action="@Url.Action("AddToCart", "Order")" method="post" class="d-inline-block">
+                        <input type="hidden" name="movieId" value="@Model.Id" />
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="bi bi-cart-plus"></i> Add to Cart
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card-footer text-end">
+                    <a asp-action="GetAllMoviesPaginated" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

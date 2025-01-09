@@ -1,10 +1,11 @@
 ﻿using MovieShopTrio.Database;
+using MovieShopTrio.Models;
 
 namespace MovieShopTrio.Services.Interfaces
 {
     public interface IHomeService
     {
-        //public List<Movie> MostPopular();
+        public List<Movie> MostPopular();
 
         public List<Movie> Newest5();
 
@@ -12,6 +13,6 @@ namespace MovieShopTrio.Services.Interfaces
 
         public List<Movie> Cheapest5();
 
-        //public List<Movie> TopCustomer();
+        public MostExpenisveOrderModel MostExpensiveOrder();
     }
 }

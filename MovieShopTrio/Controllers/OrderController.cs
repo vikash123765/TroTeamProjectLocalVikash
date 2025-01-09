@@ -2,6 +2,7 @@
 using MovieShopTrio.Database;
 using MovieShopTrio.Models;
 using MovieShopTrio.Services.Interfaces;
+using Newtonsoft.Json;
 
 namespace MovieShopTrio.Controllers
 {
@@ -35,10 +36,18 @@ namespace MovieShopTrio.Controllers
         }
 
         // Remove a movie from the cart
+  
         public IActionResult RemoveFromCart(int movieId)
         {
-            _orderService.RemoveFromCart(movieId);  // Remove the movie from the cart using the service
+            _orderService.RemoveOneFromCart(movieId);  // Remove the movie from the cart using the service
             return RedirectToAction("ViewCart");  // Redirect to the view cart page
+        }
+
+        [HttpPost]
+        public IActionResult IncreaseQuantity(int movieId)
+        {
+            _orderService.IncreaseQuantity(movieId);
+            return RedirectToAction("ViewCart"); // Redirect back to the Cart view
         }
 
         // Checkout action

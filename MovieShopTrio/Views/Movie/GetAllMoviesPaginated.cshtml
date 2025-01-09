@@ -1,0 +1,154 @@
+﻿@model MoviePaginationViewModel
+
+@{
+    ViewData["Title"] = "Get All Movies";
+}
+<h1 class="text-center"><em><strong>Movies</strong></em></h1>
+<hr />
+<div class="container mt-4 d-flex flex-column justify-content-center align-items-center" style="min-height: 80vh;">
+    
+    <!-- Search and Sort Row -->
+    <div class="row mb-4 w-100">
+        <!-- Search Bar -->
+        <!-- Search Bar -->
+        <div class="col-md-4 mb-3">
+            <form asp-controller="Movie" asp-action="GetAllMoviesPaginated" method="get" class="d-flex justify-content-start">
+                <input type="text" name="query" placeholder="Search..." value="@Model.Query" class="form-control form-control-sm w-50" required />
+                <input type="hidden" name="choice" value="@Model.Choice" />
+                <input type="hidden" name="page" value="@Model.CurrentPage" /> <!-- Retain current page -->
+                <button type="submit" class="btn btn-primary btn-sm ms-2">Search</button>
+            </form>
+
+
+        </div>
+
+        <!-- Sort Dropdown -->
+        <div class="col-md-8">
+            <form asp-controller="Movie" asp-action="GetAllMoviesPaginated" method="get" class="d-flex justify-content-end">
+                <!-- Hidden Input to Pass Search Query -->
+                <input type="hidden" name="query" value="@Model.Query" />
+                <input type="hidden" name="page" value="@Model.CurrentPage" /> <!-- Retain current page -->
+
+                <!-- Sort Dropdown -->
+                <select id="choice-dropdown" name="choice" class="form-select form-select-sm w-auto me-2" required>
+                    <option value="">Sort by</option>
+                    <option value="1">Price (High to Low)</option>
+                    <option value="2">Price (Low to High)</option>
+                    <option value="3">Title (A to Z)</option>
+                </select>
+
+                <button type="submit" class="btn btn-primary btn-sm">Sort</button>
+            </form>
+
+       
+
+
+
+        </div>
+
+    <!-- Movies Table -->
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark text-center">
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Director</th>
+                <th>Description</th>
+                <th>Release Year</th>
+                <th style="width: 100px;">Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Movies)
+            {
+                <tr class="text-center align-middle">
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.URLImage))
+                        {
+                            <img src="@item.URLImage" alt="@item.Title" class="img-fluid rounded" style="width: 100px; height: auto;" />
+                        }
+                        else
+                        {
+                            <span>No Image</span>
+                        }
+                    </td>
+                    <td><strong>@item.Title</strong></td>
+                    <td>@item.Director</td>
+                    <td><em>@item.Description</em></td>
+                    <td>@item.ReleaseYear</td>
+                    <td class="text-nowrap">@item.Price.ToString("C", new System.Globalization.CultureInfo("sv-SE"))</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Movie actions">
+                            <!-- Add to Cart Button -->
+                            <form action="@Url.Action("AddToCart", "Order")" method="post" class="d-inline-block">
+                                <input type="hidden" name="movieId" value="@item.Id" />
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="bi bi-cart-plus"></i> Add to Cart
+                                </button>
+                            </form>
+
+                            <!-- Details Link -->
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">
+                                <i class="bi bi-info-circle"></i> Details
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+        <nav>
+            <ul class="pagination justify-content-center">
+                @if (Model.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link"
+                           asp-action="GetAllMoviesPaginated"
+                           asp-route-page="@(Model.CurrentPage - 1)"
+                           asp-route-query="@Model.Query"
+                           asp-route-choice="@Model.Choice">Previous</a>
+                    </li>
+                }
+
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(Model.CurrentPage == i ? "active" : "")">
+                        <a class="page-link"
+                           asp-action="GetAllMoviesPaginated"
+                           asp-route-page="@i"
+                           asp-route-query="@Model.Query"
+                           asp-route-choice="@Model.Choice">@i</a>
+                    </li>
+                }
+
+                @if (Model.CurrentPage < Model.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link"
+                           asp-action="GetAllMoviesPaginated"
+                           asp-route-page="@(Model.CurrentPage + 1)"
+                           asp-route-query="@Model.Query"
+                           asp-route-choice="@Model.Choice">Next</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+
+
+
+</div>
+
+@section Scripts {
+        <script>
+            // Get the value of choice from server-side Model
+            var selectedChoice = @Model.Choice ?? "null";
+
+            // Set the selected option in the dropdown
+            if (selectedChoice !== "null") {
+                document.getElementById("choice-dropdown").value = selectedChoice;
+            }
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+}

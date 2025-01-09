@@ -1,0 +1,62 @@
+﻿@model IEnumerable<dynamic>
+
+@{
+    ViewData["Title"] = "Admin Orders";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="mt-3"><strong>Filter Orders</strong></h2>
+
+        <form asp-action="Orders" method="get">
+            <div class="form-group mb-2">
+                <label for="customerName">Customer Name:</label>
+                <input type="text" name="customerName" id="customerName" class="form-control" />
+            </div>
+            <div class="form-group mb-2">
+                <label for="startDate">Start Date:</label>
+                <input type="date" name="startDate" id="startDate" class="form-control" />
+            </div>
+            <div class="form-group mb-3">
+                <label for="endDate">End Date:</label>
+                <input type="date" name="endDate" id="endDate" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Filter</button>
+            <a href="/Admin/Orders" class="btn btn-secondary">Reset</a>
+        </form>
+
+        <h2 class="mt-5"><strong>All Orders</strong></h2>
+
+        @if (!Model.Any())
+        {
+            <div class="alert alert-warning" role="alert">
+                No orders found for the specified criteria.
+            </div>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="col-md-2">Order ID</th>
+                        <th class="col-md-3">Order Date</th>
+                        <th class="col-md-5">Customer Name</th>
+                        <th class="col-md-2">Total Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td class="ps-4">@order.Id</td>
+                            <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
+                            <td>@order.CustomerName</td>
+                            <td class="text-center">@order.TotalItems</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
